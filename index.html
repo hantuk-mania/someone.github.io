@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <!-- Menambahkan Bootstrap CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #001f3d; /* Navy background */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            text-align: center;
+            color: #ffffff; /* White text */
+        }
+        h1 {
+            color: #ffcc00; /* Gold color for heading */
+            font-size: 36px;
+            transition: color 0.3s ease;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .yes {
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        .no {
+            background-color: #ff5722;
+            color: white;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: not-allowed;
+        }
+        .no.fake-button {
+            background-color: transparent;
+            color: #ff5722; /* Red color for fake button */
+            border: 2px solid #ff5722;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .no.fake-button:hover {
+            background-color: #ff5722;
+            color: white;
+        }
+        img {
+            width: 150px;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+        img:hover {
+            transform: scale(1.1);
+        }
+        .video-container {
+            visibility: hidden;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .video-container video {
+            width: 50%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine?</h1>
+    <div class="buttons">
+        <button class="yes btn" onclick="showVideo()">Yes</button>
+        <button class="no fake-button" onclick="noAction()">Are you sure?</button> <!-- Tombol ini gak berubah -->
+    </div>
+    <img src="WhatsApp_Image_2025-02-07_at_20.33.42_d4db6985-removebg-preview.png" alt="Cute Cat">
+    
+    <div class="video-container" id="videoContainer">
+        <video controls autoplay id="valentineVideo">
+            <source src="WhatsApp Video 2025-02-07 at 21.02.40_ef9e9b7c.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Menambahkan JavaScript Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        function noAction() {
+            // Tombol ini tidak melakukan apa-apa, hanya memberikan efek hover
+        }
+
+        function showVideo() {
+            const videoContainer = document.getElementById('videoContainer');
+            videoContainer.style.visibility = 'visible';
+            document.getElementById('valentineVideo').play();
+            // Optionally, change background color when the video is shown
+            document.body.style.backgroundColor = '#003366'; /* Darker Navy */
+        }
+    </script>
+</body>
+</html>
